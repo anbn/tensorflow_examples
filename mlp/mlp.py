@@ -109,7 +109,7 @@ class MLP(object):
 
 def main():
     mlp = MLP()
-    sampler = Sampler("cat.png")
+    sampler = Sampler("images/cat.png")
     sampler.test()
     mlp.train(sampler)
 
