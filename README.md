@@ -20,6 +20,12 @@ Learns to remember an image pixel by pixel given its coordinates, the image is t
 
 Learns to fill in missing parts of a repetitive pattern.
 
+* RNN
 <div align="center">
-<img src="https://github.com/anbn/tensorflow_examples/blob/master/rnn-lstm/images/screenshot.png"><br>
+<img src="https://github.com/anbn/tensorflow_examples/blob/master/rnn-lstm/images/screenshot1.png"><br>
+</div>
+
+* LSTM
+<div align="center">
+<img width="600px" src="https://github.com/anbn/tensorflow_examples/blob/master/rnn-lstm/images/screenshot2.png"><br>
 </div>
