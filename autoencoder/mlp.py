@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 class MLP(object):
     def __init__(self):
         self.batch_size = 128
-        self.state_size = 20
-        self.num_in, self.num_out = 25*3, 25*3
+        self.state_size = 16
+        self.num_in, self.num_out = 100*3, 100*3
         self.learning_rate = 0.001
 
         self.x = tf.placeholder(tf.float32,
@@ -50,7 +50,7 @@ class MLP(object):
           loss, _ = self.sess.run([self.total_loss,self.optimizer],
                     feed_dict={self.x:data, self.y:data})
 
-          if i%100==0:
+          if 0<i and i%100==0:
             print "%d: %f" % (i, loss)
 
           if i%10000==0:
@@ -72,13 +72,13 @@ class MLP(object):
         for (y,x), d in zip(pos,res_y):
           result[y:y+s.patch_size,x:x+s.patch_size] = \
               d.reshape(s.patch_size, s.patch_size, 3)
-          plt.imshow(result+0.5)
+          plt.imshow(np.clip(result+0.5,0,1))
 
         plt.show()
 
 
 def main():
-    sampler = Sampler("images/cat.png")
+    sampler = Sampler("images/cat.png", patch_size=10)
     mlp = MLP()
     #mlp.sample(sampler)
     mlp.train(sampler)
